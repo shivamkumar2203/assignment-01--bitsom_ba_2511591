@@ -1,0 +1,34 @@
+[
+{
+"_id": "ELEC001",
+"name": "Samsung Galaxy S23",
+"category": "Electronics",
+"price": 74999,
+"specs": {
+"warranty": "1 year",
+"voltage": "220V",
+"brand": "Samsung"
+}
+},
+{
+"_id": "CLOTH001",
+"name": "Denim Jacket",
+"category": "Clothing",
+"price": 3499,
+"brand": "Levis",
+"sizes": ["S","M","L","XL"],
+"material": "Denim"
+},
+{
+"_id": "GROC001",
+"name": "Organic Milk",
+"category": "Groceries",
+"price": 85,
+"expiry_date": "2024-12-31",
+"nutrition": {
+"protein": "3.2g",
+"fat": "3.5g",
+"calories": "60 kcal"
+}
+}
+]

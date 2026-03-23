@@ -1,0 +1,25 @@
+## Storage Systems
+
+The architecture uses multiple storage systems to handle different types of data efficiently. A relational database such as PostgreSQL is used as the OLTP system to store patient records, treatments, and billing information. This ensures strong consistency and reliability for critical healthcare operations.
+
+A data warehouse such as Snowflake or BigQuery is used for analytical processing. It stores historical data and enables reporting such as monthly hospital statistics, bed occupancy, and department-wise costs.
+
+A vector database such as Pinecone or Weaviate is used to support semantic search. This allows doctors to query patient history using natural language, improving accessibility and decision-making.
+
+A data lake is used to store raw data including ICU monitoring streams, medical images, and logs. It supports large-scale storage and real-time data ingestion.
+
+---
+
+## OLTP vs OLAP Boundary
+
+The OLTP system handles real-time transactions such as patient registration, treatment updates, and billing. It ensures fast and reliable operations with strong consistency.
+
+The OLAP system begins when data is extracted from the transactional system and loaded into the data warehouse. This layer is used for analytics, reporting, and decision-making.
+
+---
+
+## Trade-offs
+
+One major trade-off in this architecture is increased system complexity. Using multiple storage systems such as relational databases, data lakes, vector databases, and data warehouses requires more infrastructure and management effort.
+
+This can be mitigated by using managed cloud services and automated data pipelines, which simplify deployment and reduce operational overhead while maintaining scalability and performance.

@@ -1,0 +1,21 @@
+## Anomaly Analysis
+
+### Insert Anomaly
+In the flat table, product or customer information cannot be inserted unless an order exists.  
+For example, if a new product is introduced but no customer has ordered it yet, it cannot be stored without creating a dummy order record.
+
+### Update Anomaly
+Customer information is repeated in multiple rows. If a customer changes their city, every row containing that customer must be updated. Missing one row will cause inconsistent data.
+
+### Delete Anomaly
+Deleting an order could remove important information. For example, if the only order containing a product is deleted, the product data will also disappear.
+
+## Normalization Justification
+
+Keeping all data in a single table creates redundancy and inconsistency. In the dataset, the same customer information appears across multiple rows. For instance, a single customer may have multiple orders throughout the year, causing their information to be duplicated many times. If the customer changes their address or city, every row must be updated. If one update is missed, the database becomes inconsistent.
+
+Insert anomalies also occur. If a business wants to register a new product but it has not yet been ordered, the current structure does not allow storing that product information without creating a fake order.
+
+Delete anomalies are another issue. If a row representing an order is deleted and that order contained the only record for a specific product, the entire product information will be lost.
+
+By normalizing the dataset into Third Normal Form (3NF), we separate customers, orders, and products into independent tables. This removes redundancy, improves data consistency, and makes the database easier to maintain and scale.
